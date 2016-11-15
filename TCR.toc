@@ -1,0 +1,10 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Voorbereiding}{1}{section.1}
+\contentsline {section}{\numberline {2}Begin van contest}{1}{section.2}
+\contentsline {subsection}{\numberline {2.1}VIM}{1}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Template}{1}{subsection.2.2}
+\contentsline {section}{\numberline {3}Geometry}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}Punten (2D) en rotaties}{2}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Lijnen}{3}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Veelhoeken}{3}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Cirkels}{3}{subsection.3.4}
