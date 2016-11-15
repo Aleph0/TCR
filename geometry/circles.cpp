@@ -15,22 +15,4 @@ bool vindMiddelpunt(pt p1, pt p2, double r, pt &c) {
   c.x = (p1.x + p2.x) * 0.5 + (p1.y - p2.y) * sqrt(det);
   c.y = (p1.y + p2.y) * 0.5 + (p2.x - p1.x) * sqrt(det);
   return true; } // ander middelpunt krijg je door p2 en p1 om te draaien.
-// De inCircle vindt de ingeschreven cirkel.
-double rInCircle(double ab, double bc, double ca) {
-	return area(ab, bc, ca) / (0.5 * perimeter(ab, bc, ca)); }
-double rInCircle(pt a, pt b, pt c) {
-  return rInCircle(Dist(a, b), Dist(b, c), Dist(c, a)); }
-int inCircle(pt p1, pt p2, pt p3, pt &ctr, double &r) {
-  r = rInCircle(p1, p2, p3);
-  if (fabs(r) < EPS) return 0; // Geen ingeschreven cirkel
-  line l1, l2; // De ingeschreven cirkel is het snijpunt van bisectrices.
-  double ratio = Dist(p1, p2) / Dist(p1, p3);
-  pt p = verplaatsen(p2, schalen(verschilvector(p2, p3), ratio / (1 + ratio)));
-  l1 = pttoline(p1, p);
-
-  ratio = Dist(p2, p1) / Dist(p2, p3);
-  p = verplaatsen(p1, schalen(verschilvector(p1, p3), ratio / (1 + ratio)));
-  l2 = pttoline(p2, p);
-
-  snijpunten(l1, l2, ctr);           // get their intersection point
-}
+// Wanneer je drie punten hebt, kun je de cirkel door deze punten vinden door eerst de straal te berekenen met Dist(p1,p2) * Dist(p2,p3) * Dist(p3,p1) / (4 * oppDriehoek(p1,p2,p3)) en dan het juiste middelpunt te nemen.
